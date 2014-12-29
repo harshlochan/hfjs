@@ -1,0 +1,57 @@
+//Simulating Named Parameters with default options.
+//In Javascript, the pattern for named parameters shown here is sometimes called options or Options Object (jQuery docs)
+
+
+
+function setScreen(options){
+  options = options || {};
+  var offenseType = options.type || 'Standard Pick n Roll';
+  var forPosition = options.forPosition || 'PG';
+  return (function(){})();
+}
+
+
+undefined
+//Simulating Named Parameters with default options.
+function setScreen(options){
+  options = options || {};
+  var offenseType = options.type || 'Standard Pick n Roll';
+  var forPosition = options.forPosition || 'PG';
+  return (function(){ return [this.offenseType, this.forPosition]; })();
+}
+//messed up use of “NAMED PARAMETERS”
+//TRY#3 - works
+
+undefined
+var screeninfo = setScreen();
+undefined
+screeninfo;
+[undefined, undefined]
+//Simulating Named Parameters with default options.
+function setScreen(options){
+  options = options || {};
+  var offenseType = options.type || 'Standard Pick n Roll';
+  var forPosition = options.forPosition || 'PG';
+  return (function(){ return [offenseType, forPosition]; })();
+}
+
+
+undefined
+
+var screeninfo = setScreen();
+undefined
+
+screeninfo;
+["Standard Pick n Roll", "PG"]
+
+var backdoorScreen = setScreen('Baseline Screen', 'SG');
+undefined
+
+backdoorScreen;
+["Standard Pick n Roll", "PG"]
+
+var hiLow = setScreen({offenseType: "Baseline", forPosition: "SG"});
+undefined
+
+hiLow;
+["Standard Pick n Roll", "SG"]

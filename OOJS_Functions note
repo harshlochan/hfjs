@@ -1,0 +1,61 @@
+FUNCTIONS CHAPTER NOTES
+
+//NaN when numerical operation assumed 
+//with operators but fails
+
+//Variables in Javascript not block scope but fn
+//if variable is defined in fn, not visible outside fn
+/*
+var a = 123;
+function f(){
+  alert(a);
+  //undefined because it exists local space
+  var a = 1; //here it receives the assigned val
+  alert(a);
+}
+
+//FUNCTIONS are DATA hence fn expressions
+//executable (thus invokable*)
+var g = function(){return 1;};
+typeof g;
+g();
+
+
+ANONYMOUS FUNCTIONS (uses): 
+1. Either Execute right away (one off/init tasks) (fn)(params)
+2. Pass an anonymous function as a parameter to another function (callback)
+since functions are data
+
+//CLOSURE Case Studies
+//case 1: 
+
+function f(){
+  var b =  'bob';
+  return function(){
+    return b;
+  }
+}
+n = f(); //receive the returned fn;
+n(); //invoke to access b
+
+//CLOSURE Case Studies 
+//case 2:
+
+var n;
+function f(){
+  var b =  'billybob';
+  n = function(){
+    return b;
+  }
+}
+f(); //triggers n because fn declaraction without var is global
+n();
+"billybob"
+
+//Definition:
+Closure is created when a function keeps a link to its parent’s SCOPE 
+even after the parent returns.
+
+//CLOSURE Case Studies #3
+
+ 
